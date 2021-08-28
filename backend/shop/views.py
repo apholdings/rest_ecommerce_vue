@@ -4,15 +4,13 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 
 from .models import Product, Category
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, CategorySerializer
 
 
 class ProductListView(APIView):
     def get(self, request, *args, **kwargs):
         products = Product.objects.all()[0:4]
-
         serializer = ProductSerializer(products, many=True)
-
         return Response(serializer.data)
 
 
@@ -26,5 +24,5 @@ class ProductDetailView(APIView):
 class CategoryDetailView(APIView):
     def get(self, request, category_slug,*args, **kwargs):
         category = get_object_or_404(Category, slug=category_slug)
-        serializer = ProductSerializer(category)
+        serializer = CategorySerializer(category)
         return Response(serializer.data)
