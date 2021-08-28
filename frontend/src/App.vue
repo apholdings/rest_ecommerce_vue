@@ -2,10 +2,6 @@
   <element id="nav">
   <Navbar></Navbar>
   </element>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view/>
 </template>
 
@@ -29,16 +25,15 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#nav a {
+  font-weight: Bold;
+  color: #5e6a75;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#nav a.router-link-exact-active {
+  font-weight: bold;
+  color: #111827;
+  --tw-border-opacity: 1;
+  border-color: rgba(99, 102, 241, var(--tw-border-opacity));
 }
 </style>
