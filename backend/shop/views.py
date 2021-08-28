@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from django.shortcuts import get_object_or_404
 
-from .models import Product
+from .models import Product, Category
 from .serializers import ProductSerializer
 
 
@@ -20,4 +20,11 @@ class ProductDetailView(APIView):
     def get(self, request, category_slug, product_slug,*args, **kwargs):
         product = get_object_or_404(Product,category__slug=category_slug, slug=product_slug)
         serializer = ProductSerializer(product)
+        return Response(serializer.data)
+
+
+class CategoryDetailView(APIView):
+    def get(self, request, category_slug,*args, **kwargs):
+        category = get_object_or_404(Category, slug=category_slug)
+        serializer = ProductSerializer(category)
         return Response(serializer.data)

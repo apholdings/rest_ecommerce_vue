@@ -43,9 +43,10 @@
             Register
           </button>
 
-          <button type="button" class="mx-1 bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
+          <button type="button" class="inline-flex mx-1 bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <span class="sr-only">Cart</span>
+            <ShoppingCartIcon class="h-6 w-6" aria-hidden="true" />
+            <div class="mx-1">{{ cartTotalLength }}</div>
           </button>
 
           <!-- Profile dropdown -->
@@ -95,7 +96,7 @@
 
 <script>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { ShoppingCartIcon,BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 
 export default {
   components: {
@@ -109,6 +110,8 @@ export default {
     BellIcon,
     MenuIcon,
     XIcon,
+    ShoppingCartIcon
   },
+  
 }
 </script>
