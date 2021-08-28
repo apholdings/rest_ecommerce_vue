@@ -4,6 +4,7 @@ import Blog from '../views/Blog.vue'
 import Store from '../views/Store.vue'
 import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
+import Search from '../views/Search.vue'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: '/:category_slug',
     name: 'Category',
     component: Category
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
   },
 ]
 
